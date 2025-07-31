@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The hard life of a climber in Trentino</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('background.png') center center / cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        
+        canvas {
+            border: 3px solid #8B4513;
+            background: linear-gradient(to right, #D2B48C 0%, #DDD8C7 50%, #D2B48C 100%);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .game-container {
+            text-align: center;
+            position: relative;
+        }
+        
+        
+        h1 {
+            color: #2F4F4F;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .controls {
+            margin-top: 10px;
+            color: white;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>The hard life of a climber in Trentino</h1>
+        <canvas id="gameCanvas" width="400" height="600"></canvas>
+        <div class="controls">
+            Use arrow keys to move: ← → ↑ ↓
+        </div>
+        <div id="score" style="color: white; font-size: 18px; font-weight: bold; margin-top: 10px;">
+            Score: 0
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
