@@ -60,6 +60,7 @@ class Game {
         this.keys = {};
         this.scoreElement = document.getElementById('score');
         this.setupEventListeners();
+        this.setupMobileControls();
         this.gameLoop();
     }
     
@@ -70,6 +71,48 @@ class Game {
         
         document.addEventListener('keyup', (e) => {
             this.keys[e.key] = false;
+        });
+    }
+    
+    setupMobileControls() {
+        const controlButtons = document.querySelectorAll('.control-btn');
+        
+        controlButtons.forEach(button => {
+            const key = button.getAttribute('data-key');
+            
+            // Touch start - simulate key press
+            button.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                this.keys[key] = true;
+            });
+            
+            // Touch end - simulate key release
+            button.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                this.keys[key] = false;
+            });
+            
+            // Touch cancel - simulate key release
+            button.addEventListener('touchcancel', (e) => {
+                e.preventDefault();
+                this.keys[key] = false;
+            });
+            
+            // Mouse events for desktop testing
+            button.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+                this.keys[key] = true;
+            });
+            
+            button.addEventListener('mouseup', (e) => {
+                e.preventDefault();
+                this.keys[key] = false;
+            });
+            
+            button.addEventListener('mouseleave', (e) => {
+                e.preventDefault();
+                this.keys[key] = false;
+            });
         });
     }
     
