@@ -46,7 +46,7 @@ class Game {
         
         this.player = {
             x: this.width / 2 - 20,
-            y: this.height - 100,
+            y: this.height - 200,
             width: 40,
             height: 50,
             speed: 5,
